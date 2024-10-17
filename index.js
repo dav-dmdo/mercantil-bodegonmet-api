@@ -7,12 +7,19 @@ const {
   boomErrorHandler,
 } = require('./middlewares/error.handler.js');
 
+const logUrl = require('./middlewares/loggin.handler.js');
+const isAdmin = require('./middlewares/auth.handler.js');
+
 const app = express();
 const port = process.env.PORT || 3000;
 
 // Middleware para parsear JSON
 app.use(express.json());
 app.use(cors());
+
+app.use(logUrl);
+
+app.use(isAdmin);
 
 routerAPI(app);
 

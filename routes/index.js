@@ -1,10 +1,10 @@
 const express = require('express');
 const cors = require('cors');
 
-const creditoRouter = require('./payCredito.router.js');
-const debitoRouter = require('./payDebito.router.js');
-const pagoMovilRouter = require('./payPagoMovil.router.js');
-const c2pRouter = require('./payC2P.router.js');
+const creditoRouter = require('./credito.router.js');
+const debitoRouter = require('./debito.router.js');
+const pagoMovilRouter = require('./pagoMovil.router.js');
+const c2pRouter = require('./c2p.router.js');
 
 function routerAPI(app) {
   const appRouter = express.Router();
